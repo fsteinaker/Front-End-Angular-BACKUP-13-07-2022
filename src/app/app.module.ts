@@ -8,7 +8,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { FormacionComponent } from './componentes/formacion/formacion.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // Import ng-circle-progress
 import { NgCircleProgressModule } from 'ng-circle-progress';

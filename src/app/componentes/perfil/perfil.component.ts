@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { PersonaService } from 'src/app/services/persona.service';
+import { persona } from '../model/persona.model';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
-export class PerfilComponent implements OnInit {
-  miPorfolio:any;
-  constructor(private datosPorfolio:PorfolioService) { }
+
+export class PerfilComponent implements OnInit {  
+  persona: persona | any;
+
+  constructor(public personaService: PersonaService) { }
 
   ngOnInit(): void {
-    this.datosPorfolio.ObtenerDatos().subscribe(data =>{
-      console.log(data);
-      this.miPorfolio=data;
-    });
-  }
 
+          this.personaService.getPersona().subscribe(data => {
+            console.log(data);
+            this.persona = data;
+          })
+        };
 }

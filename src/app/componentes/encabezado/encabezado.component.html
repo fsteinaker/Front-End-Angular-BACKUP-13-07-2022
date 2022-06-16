@@ -15,10 +15,10 @@
         </ul>
     </div>
     <img id="img_cabecera" src=".\assets\img\rafaela.png">
-    <img id="foto_cv" [src]="miPorfolio.usuario.imagen">
-    <p id="nombre_fede">{{miPorfolio.usuario.nombre}}</p>
+    <img id="foto_cv" [src]="persona.imagen">
+    <p id="nombre_fede">{{persona.nombre}} {{persona.apellido}}</p>
 </section>
 
 <section id="datos_cv">
-    <p class="datos_cv_info">{{miPorfolio.usuario.localidad}}<br>{{miPorfolio.usuario.edad}} años, {{miPorfolio.usuario.profesion}}</p><img src=".\assets\icon\edit_icon.png" class="edit-icon" style="margin-top: 10px; margin-right: 45px;" onclick="ventana_notificacion()" role="button">
+    <p class="datos_cv_info">Fecha de nacimiento: {{persona.fecha_nacimiento}}, Localidad: {{localidad.ciudad}}, ({{localidad.provincia}}) - Código postal: {{localidad.codigo_postal}}<br>Correo: {{persona.correo}} , Teléfono: {{persona.telefono}}<br>{{persona.edad}} años, <b>{{persona.profesion}}</b></p><img src=".\assets\icon\edit_icon.png" class="edit-icon" style="margin-top: 10px; margin-right: 45px;" onclick="ventana_notificacion()" role="button">
 </section>
