@@ -268,8 +268,8 @@ div.card{
 /*TITULO LUGAR FORMACION*/
 div.titulo-trab-educ{
 	float: left;
-	margin-top: 8px;
-	margin-left: 0px;
+	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
 div.divisor-lugar-trab-educ{

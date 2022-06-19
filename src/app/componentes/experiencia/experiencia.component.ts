@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 import { PortfolioService } from 'src/app/services/portfolio.service';
-
 import { explaboral } from '../model/explaboral.model';
 
 @Component({

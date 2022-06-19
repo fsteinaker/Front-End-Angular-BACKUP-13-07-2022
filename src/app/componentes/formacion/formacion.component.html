@@ -6,16 +6,17 @@
      
     <div class="sangria-francesa">
     <ul>
-        <li *ngFor="let formacion of formacionList">
+        <li *ngFor="let educacion of formacionList">
             <div class="divisor-lugar-trab-educ">
                 <img class="isotipo2"
-                [src]="formacion.imagen"
+                [src]="educacion.imagen"
                 >
                     <div class="titulo-trab-educ">
-                        <h4 class="card-title-2"> {{formacion.institucion}}</h4>                
-                        <h6 class="card-subtitle mb-2 text-muted">({{formacion.comienzo}} - {{formacion.finalizacion}})</h6>
+                        <h4 class="card-title-2"> {{educacion.institucion}}</h4>                
+                        <h6 class="card-subtitle mb-2 text-muted">({{educacion.fecha_inicio}} - {{educacion.fecha_final}})</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Título: {{educacion.titulo}}</h6>
                     </div>
-                <p class="card-text">{{formacion.descripcion}}</p>
+                <p class="card-text">{{educacion.detalle}}</p>
             </div>           
         </li>
     </ul>
