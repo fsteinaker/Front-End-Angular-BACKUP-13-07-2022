@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonaService } from 'src/app/services/persona.service';
-import { LocalidadService } from 'src/app/services/localidad.service';
+
 import { persona } from '../model/persona.model';
 import { localidad } from '../model/localidad.model';
+
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
                 //import { AuthService } from 'src/app/services/auth.service';
                 //import { PorfolioService } from 'src/app/servicios/porfolio.service';
@@ -28,7 +29,7 @@ export class EncabezadoComponent implements OnInit {
   authService: any;
   router: any;
 
-          constructor(public personaService: PersonaService, public localidadService: LocalidadService) { }
+          constructor(public personaService: PortfolioService, public localidadService: PortfolioService) { }
 
           ngOnInit(): void {
 

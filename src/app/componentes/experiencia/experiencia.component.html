@@ -8,16 +8,16 @@
 
         <div class="sangria-francesa"> 
         <ul>
-            <li *ngFor="let experiencia of experienciaList">
+            <li *ngFor="let explaboral of explaboralList">
                 <div class="divisor-lugar-trab-educ">
                     <img class="isotipo2"
-                    [src]="experiencia.imagen"
+                    [src]="explaboral.imagen"
                     >
                         <div class="titulo-trab-educ">
-                            <h4 class="card-title-2"> {{experiencia.empresa}}</h4>                
-                            <h6 class="card-subtitle mb-2 text-muted">({{experiencia.comienzo}} - {{experiencia.finalizacion}})</h6>
+                            <h4 class="card-title-2"> {{explaboral.empresa}}</h4>                
+                            <h6 class="card-subtitle mb-2 text-muted">({{explaboral.fecha_inicio}} - {{explaboral.fecha_final}})</h6>
                         </div>
-                    <p class="card-text">{{experiencia.descripcion}}</p>
+                    <p class="card-text">{{explaboral.detalle}}</p>
                 </div>           
             </li>
         </ul>
