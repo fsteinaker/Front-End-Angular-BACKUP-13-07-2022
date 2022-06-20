@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { PortfolioService } from 'src/app/services/portfolio.service'; 
+import { habilidades } from '../model/habilidades.model';
 
 @Component({
   selector: 'app-habilidades',
@@ -7,13 +8,18 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  habilidadList:any;
-  constructor(private datosPorfolio:PorfolioService) { }
+  habilidadList!: habilidades[];
+  constructor(private habilidadService:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPorfolio.ObtenerDatos().subscribe(data =>{
-      this.habilidadList=data.habilidad;
-    })
+    this.getdatosHabilidades();
   }
 
+    private getdatosHabilidades(){
+    this.habilidadService.getHabilidades().subscribe((data ) => {
+      this.habilidadList = data;
+      console.log(data)
+      }
+    );
+  }
 }

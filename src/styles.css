@@ -265,6 +265,16 @@ div.card{
 	padding-right: 10px;
 }
 
+		/* IMAGEN SECCION PROYECTOS */
+			div.container_proyecto{
+				display: block;
+				margin-left: 200px;
+			}
+
+			img.img_proyecto {
+				width: 70%;	
+			}
+
 /*TITULO LUGAR FORMACION*/
 div.titulo-trab-educ{
 	float: left;

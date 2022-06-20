@@ -17,6 +17,8 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { environment } from 'src/environments/environment';
     FormacionComponent,
     HabilidadesComponent,
     IniciarSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ProyectosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
