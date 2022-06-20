@@ -14,31 +14,128 @@ import { proyectos } from '../componentes/model/proyectos.model';
 
 export class PortfolioService {
     
-private apiServerUrl = environment.apiBaseUrl;
-    
-constructor(private http: HttpClient) { }
+    private apiServerUrl = environment.apiBaseUrl;
+        
+    constructor(private http: HttpClient) { }
 
-  public getProyectos(): Observable<proyectos[]>{
-    return this.http.get<proyectos[]>(`${this.apiServerUrl}/proyectos`);
-    }
+      // COMIENZO SERVICIO PARA VER COMPONENTES
 
-  public getHabilidades(): Observable<habilidades[]>{
-    return this.http.get<habilidades[]>(`${this.apiServerUrl}/habilidad`);
-    }
+      public getProyectos(): Observable<proyectos[]>{
+        return this.http.get<proyectos[]>(`${this.apiServerUrl}/proyectos`);
+        }
 
-  public getEducacion(): Observable<educacion[]>{
-    return this.http.get<educacion[]>(`${this.apiServerUrl}/educacion`);
-    }
+      public getHabilidades(): Observable<habilidades[]>{
+        return this.http.get<habilidades[]>(`${this.apiServerUrl}/habilidad`);
+        }
 
-  public getExplaboral(): Observable<explaboral[]>{
-    return this.http.get<explaboral[]>(`${this.apiServerUrl}/explaboral`);
-    }
+      public getEducacion(): Observable<educacion[]>{
+        return this.http.get<educacion[]>(`${this.apiServerUrl}/educacion`);
+        }
 
-    public getLocalidad(): Observable<localidad>{
-        return this.http.get<localidad>(`${this.apiServerUrl}/localidad`);
-    }
-  
-    public getPersona(): Observable<persona>{
-        return this.http.get<persona>(`${this.apiServerUrl}/persona`);
-    }
-  }
+      public getExplaboral(): Observable<explaboral[]>{
+        return this.http.get<explaboral[]>(`${this.apiServerUrl}/explaboral`);
+        }
+
+        public getLocalidad(): Observable<localidad>{
+            return this.http.get<localidad>(`${this.apiServerUrl}/localidad`);
+        }
+      
+        public getPersona(): Observable<persona>{
+            return this.http.get<persona>(`${this.apiServerUrl}/persona`);
+        }
+
+        //servicio para CREAR nuevos datos (POST)
+        
+        public postNewProyectos(proyectos:proyectos):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/proyectos/crear`, proyectos);
+        }
+
+        public postNewHabilidades(habilidades:habilidades):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/habilidad/crear`, habilidades);
+        }
+
+        public postNewEducacion(educacion:educacion):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/educacion/crear`, educacion);
+        }
+
+        public postNewExperiencia(experiencia:explaboral):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/explaboral/crear`, experiencia);
+        }
+
+        public postNewLocalidad(experiencia:localidad):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/localidad/crear`, experiencia);
+        }
+
+        public postNewPersona(experiencia:persona):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/persona/crear`, experiencia);
+        }
+      
+        /* servicio para traer los datos del porfolio
+        public detallepersona(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}detallepersona/${id}`);
+        }
+        public detalleeducacion(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}detalle/${id}`);
+        }
+        public detalleacercade(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}detalleacercade/${id}`);
+        }
+        public detalleexperiencia(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}detalle/experiencia/${id}`);
+        }
+        public detalleproyecto(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}detalle/proyecto/${id}`);
+        }  
+        public detalleskillshabilidades(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}detalle/skillshabilidades/${id}`);
+        } */
+
+      //servicio para ACTUALIZAR los datos del porfolio (PUT)
+
+      public updateProyectos(id:number, proyectos: proyectos):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/proyectos/editar/${id}`, proyectos);
+      }
+
+      public updateHabilidades(id:number, skillshabilidades:habilidades):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/habilidad/editar/${id}`, skillshabilidades);
+      }
+
+      public updateEducacion(id:number, educacion: educacion):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/educacion/editar/${id}`, educacion);
+      }
+
+      public updateExplaboral(id:number, experiencia: explaboral):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/explaboral/editar/${id}`, experiencia);
+      }
+      
+      public updateLocalidad(id:number, localidad: localidad):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/localidad/editar/${id}`, localidad);
+      }
+
+      public updatePersona(id:number, persona: persona):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/persona/editar/${id}`, persona);
+      }
+
+      //servicio para BORRAR los datos del porfolio (DELETE)
+
+      public deleteProyectos(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/proyectos/borrar/${id}`);
+      }
+
+      public deleteHabilidades(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/habilidad/borrar/${id}`);
+      }
+
+      public deleteEducacion(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/educacion/borrar/${id}`);
+      }
+
+      public deleteLocalidad(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/localidad/borrar/${id}`);
+      }
+
+      public deletePersona(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/persona/borrar/${id}`);
+      }
+
+}
