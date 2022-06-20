@@ -70,25 +70,31 @@ export class PortfolioService {
           return this.http.post<any>(`${this.apiServerUrl}/persona/crear`, experiencia);
         }
       
-        /* servicio para traer los datos del porfolio
-        public detallepersona(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}detallepersona/${id}`);
+        // servicio para traer los datos del porfolio
+
+        public detalleProyecto(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/proyectos/detalle/${id}`);
         }
-        public detalleeducacion(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}detalle/${id}`);
+        
+        public detalleHabilidad(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/habilidad/detalle/${id}`);
         }
-        public detalleacercade(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}detalleacercade/${id}`);
+
+        public detalleExplaboral(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/explaboral/detalle/${id}`);
         }
-        public detalleexperiencia(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}detalle/experiencia/${id}`);
+        
+        public detalleEducacion(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/educacion/detalle/${id}`);
         }
-        public detalleproyecto(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}detalle/proyecto/${id}`);
-        }  
-        public detalleskillshabilidades(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}detalle/skillshabilidades/${id}`);
-        } */
+
+        public detalleLocalidad(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/localidad/detalle/${id}`);
+        }
+
+        public detallePersona(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/persona/detalle/${id}`);
+        }
 
       //servicio para ACTUALIZAR los datos del porfolio (PUT)
 
@@ -124,6 +130,10 @@ export class PortfolioService {
 
       public deleteHabilidades(id:number):Observable<any>{
         return this.http.delete<any>(`${this.apiServerUrl}/habilidad/borrar/${id}`);
+      }
+
+      public deleteExplaboral(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/explaboral/borrar/${id}`);
       }
 
       public deleteEducacion(id:number):Observable<any>{

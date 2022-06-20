@@ -275,6 +275,11 @@ div.card{
 				width: 70%;	
 			}
 
+			h6.detalle_tecnologia{
+				font-style: oblique;
+				color: grey;
+			}
+
 /*TITULO LUGAR FORMACION*/
 div.titulo-trab-educ{
 	float: left;

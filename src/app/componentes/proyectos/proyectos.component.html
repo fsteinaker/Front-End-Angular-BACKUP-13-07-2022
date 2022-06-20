@@ -9,12 +9,13 @@
         <li *ngFor="let proyecto of proyectosList">
         <div class="divisor-lugar-trab-educ">            
                 <div class="titulo-trab-educ">
-                    <h4 class="card-title-2"> {{proyecto.proyectos}}</h4>                
+                    <h4 class="card-title-2"> {{proyecto.proyectos}}</h4>          
                 </div><br><br>
                 <div class="container_proyecto">
                     <img class="img_proyecto" [src]="proyecto.imagen"><br>
                 </div>
-            <br><p class="card-text">{{proyecto.detalle}}</p>
+                <br><h6 class="detalle_tecnologia"><u>Tecnología:</u> {{proyecto.tecnologia}}</h6> 
+            <p class="card-text">{{proyecto.detalle}}</p>
         </div>           
         </li> 
 </ul>
