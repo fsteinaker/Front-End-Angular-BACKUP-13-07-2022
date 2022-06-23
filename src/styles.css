@@ -321,3 +321,12 @@ div.divisor-lugar-trab-educ{
 						text-align: center;
 					}
 					/*FIN - GRAFICOS DE BARRA CIRCULAR*/
+
+					/* PREGUNTA INICIO SESION - REGISTRO */
+
+					.cuenta-registro{
+						display: block;
+						margin: auto;
+						text-emphasis: center;
+						width: 70%;
+					}

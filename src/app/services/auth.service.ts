@@ -5,6 +5,7 @@ import firebase from 'firebase/compat/app';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   constructor(private afauth: AngularFireAuth) { }
@@ -13,7 +14,7 @@ export class AuthService {
     try {
       return await this.afauth.signInWithEmailAndPassword(email, password);
     } catch(err) {
-      console.log("error en registro: ", err);
+      console.log("error en login: ", err);
       return null;
     }
   }
@@ -22,7 +23,7 @@ export class AuthService {
     try {
       return await this.afauth.createUserWithEmailAndPassword(email, password);
     } catch(err) {
-      console.log("error en login: ", err);
+      console.log("error en registro: ", err);
       return null;
     }
   }
@@ -36,12 +37,8 @@ export class AuthService {
     }
   }
 
-  getUserLogged(){
-    this.afauth.signOut()
-  }
-  
-  logout() {
-    this.afauth.signOut();
-  }
+logout(){
+  this.afauth.signOut();
+}
 
 }

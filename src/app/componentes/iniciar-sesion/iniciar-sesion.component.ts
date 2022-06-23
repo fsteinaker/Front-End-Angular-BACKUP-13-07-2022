@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -13,24 +12,26 @@ export class IniciarSesionComponent {
     email: '',
     password: ''
   }
+  router: any;
 
-  constructor(private authService: AuthService, public router: Router) {
+  constructor(private authService: AuthService) {
 
   }
-  
+
   Ingresar() {
       const { email,password } = this.usuario;
-      this.authService.register(email,password).then(res=>{
+      this.authService.login(email,password).then(res=>{
       console.log("Se registro: ",res);
-      this.router.navigateByUrl('/portfolio')  
+      this.router.navigateByUrl('/portfolio')
+    })
+  }  
+
+    IngresarConGoogle() {
+      const { email,password } = this.usuario;
+      this.authService.loginWithGoogle(email,password).then(res=>{
+        console.log("Inicio sesion con Google: ",res);
+        this.router.navigateByUrl('/portfolio') 
     })
   }
 
-    IngresarConGoogle(): void {
-      const { email,password } = this.usuario;
-      this.authService.loginWithGoogle(email,password).then(res=>{
-        console.log("Se registro: ",res);
-        this.router.navigateByUrl('/portfolio')
-    })
-  }
 }

@@ -9,6 +9,7 @@ import { persona } from '../componentes/model/persona.model';
 import { educacion } from '../componentes/model/educacion.model';
 import { habilidades } from '../componentes/model/habilidades.model';
 import { proyectos } from '../componentes/model/proyectos.model';
+import { usuario } from '../componentes/model/usuario.model';
 
 @Injectable({ providedIn: 'root' })
 
@@ -44,6 +45,10 @@ export class PortfolioService {
             return this.http.get<persona>(`${this.apiServerUrl}/persona`);
         }
 
+        public getUsuario(): Observable<usuario[]>{
+          return this.http.get<usuario[]>(`${this.apiServerUrl}/usuario`);
+      }
+
         //servicio para CREAR nuevos datos (POST)
         
         public postNewProyectos(proyectos:proyectos):Observable<any>{
@@ -58,19 +63,23 @@ export class PortfolioService {
           return this.http.post<any>(`${this.apiServerUrl}/educacion/crear`, educacion);
         }
 
-        public postNewExperiencia(experiencia:explaboral):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/explaboral/crear`, experiencia);
+        public postNewExperiencia(explaboral:explaboral):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/explaboral/crear`, explaboral);
         }
 
-        public postNewLocalidad(experiencia:localidad):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/localidad/crear`, experiencia);
+        public postNewLocalidad(localidad:localidad):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/localidad/crear`, localidad);
         }
 
-        public postNewPersona(experiencia:persona):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/persona/crear`, experiencia);
+        public postNewPersona(persona:persona):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/persona/crear`, persona);
+        }
+
+        public postNewUsuario(usuario:usuario):Observable<any>{
+          return this.http.post<any>(`${this.apiServerUrl}/usuario/crear`, usuario);
         }
       
-        // servicio para traer los datos del porfolio
+        // servicio para TRAER los datos del porfolio
 
         public detalleProyecto(id: number): Observable<any>{
           return this.http.get<any>(`${this.apiServerUrl}/proyectos/detalle/${id}`);
@@ -94,6 +103,10 @@ export class PortfolioService {
 
         public detallePersona(id: number): Observable<any>{
           return this.http.get<any>(`${this.apiServerUrl}/persona/detalle/${id}`);
+        }
+
+        public detalleUsuario(id: number): Observable<any>{
+          return this.http.get<any>(`${this.apiServerUrl}/usuario/detalle/${id}`);
         }
 
       //servicio para ACTUALIZAR los datos del porfolio (PUT)
@@ -122,6 +135,10 @@ export class PortfolioService {
         return this.http.put<any>(`${this.apiServerUrl}/persona/editar/${id}`, persona);
       }
 
+      public updateUsuario(id:number, usuario: usuario):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/usuario/editar/${id}`, usuario);
+      }
+
       //servicio para BORRAR los datos del porfolio (DELETE)
 
       public deleteProyectos(id:number):Observable<any>{
@@ -146,6 +163,10 @@ export class PortfolioService {
 
       public deletePersona(id:number):Observable<any>{
         return this.http.delete<any>(`${this.apiServerUrl}/persona/borrar/${id}`);
+      }
+
+      public deleteUsuario(id:number):Observable<any>{
+        return this.http.delete<any>(`${this.apiServerUrl}/usuario/borrar/${id}`);
       }
 
 }

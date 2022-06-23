@@ -9,20 +9,19 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <h2 style="margin: 40px;">¡Bienvenid@!</h2>
+      <h2 style="margin: 40px;">Registrate</h2>
     </div>
 
     <!-- Login Form -->
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Ingrese su correo" [(ngModel)]="usuario.email">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password">
-      <input type="submit" style="margin-top: 25px;" class="fadeIn fourth" value="Iniciar sesión" (click)="Ingresar()">
-      <input type="submit" style="width: 57%; margin-top: -10px;" class="fadeIn fourth" value="Ingresar con Google" (click)="IngresarConGoogle()">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Ingrese su nueva contraseña" [(ngModel)]="usuario.password">
+      <input type="submit" style="margin-top: 25px;" class="fadeIn fourth" value="REGISTRARSE" (click)="Registrar()">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <div class="cuenta-registro"><p>¿No tenes una cuenta? </p><a routerLink="/registrarse">Hacé click aquí.</a></div>
+      <div class="cuenta-registro"><p>¿Ya estás registrado? </p><a routerLink="/iniciar-sesion">Hacé click aquí.</a></div>
       <a class="underlineHover" href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa" target="_blank">Argentina Programa 2022 #YoProgramo</a>
     </div>
 
