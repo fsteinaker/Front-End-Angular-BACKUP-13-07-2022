@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { environment } from 'src/environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// Componentes
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { FormacionComponent } from './componentes/formacion/formacion.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
-import { environment } from 'src/environments/environment';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+import { ErrorComponent } from './componentes/iniciar-sesion/error/error.component';
+import { RegistroExitosoComponent } from './componentes/iniciar-sesion/registro-exitoso/registro-exitoso.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
+// Firebase
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -38,7 +42,10 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     PortfolioComponent,
     ProyectosComponent,
     FooterComponent,
-    RegistrarseComponent
+    RegistrarseComponent,
+    ErrorComponent,
+    RegistroExitosoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

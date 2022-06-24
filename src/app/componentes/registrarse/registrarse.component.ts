@@ -22,7 +22,7 @@ export class RegistrarseComponent {
       const { email,password } = this.usuario;
       this.authService.register(email,password).then(res=>{
       console.log("Se registro: ",res);
-      this.router.navigateByUrl('/iniciar-sesion')  
+      this.router.navigateByUrl('/registro-exitoso')  
     })
   }
 }

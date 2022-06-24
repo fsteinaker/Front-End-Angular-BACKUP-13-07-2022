@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light" style="background-color: #31bbec;">
+    <div class="container-fluid">
+      <a class="navbar-brand" *ngIf="userLogged|async as user">
+
+        <h5 style="font-weight: 500; color:white; text-shadow: 10px;">¡Hola {{user.email}}!</h5>
+
+      </a>
+    </div>
+    <button class="btn btn-outline-light" (click)="logout()">Cerrar sesión</button>
+  </nav>
