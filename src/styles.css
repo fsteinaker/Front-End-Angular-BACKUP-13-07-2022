@@ -25,7 +25,7 @@ head{
 	padding-bottom: 15px;
 	padding-left: 20px;
 	padding-right: 20px;
-	box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 	border-radius: 15px;
 }
 
@@ -101,9 +101,12 @@ div#logo_argentina_programa{
 
 .isotipo{
 	width: 75px;
+	display: block;
+	float: left;
 	border-radius: 50px;
+	margin-top: -7px;
 	margin-right: 15px;
-	box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .isotipo2{
@@ -111,7 +114,7 @@ div#logo_argentina_programa{
 	width: 75px;
 	border-radius: 50px;
 	margin-right: 15px;
-	box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
+	box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 	border-width: 1px;
 	border-style: solid;
 	border-color: lightgrey;
@@ -119,11 +122,11 @@ div#logo_argentina_programa{
 }
 
 #texto_arg_p {
-	float: left;
+	float: right;
 	font-size: 20pt;
 	font-weight: bolder;
 	color: rgb(49, 187, 236);
-	margin-top: 22px;
+	margin-top: 10px;
 	text-shadow: rgba(2,2,2,0.02) 3px 0, rgba(2,2,2,0.05) 0 5px;
 }
 
@@ -233,11 +236,84 @@ ul {
 			 transform: scale(1.25);
 		}
 
+		.borrar{
+			padding: 0;
+			border: none;
+			background: none;
+			color: red;
+			border-radius: 100%;
+			opacity: 80%;
+		}
+		
+		.borrar:hover{
+			background-color: red;
+			color: white;
+			border-radius: 100%;
+			transition: .5s;
+			opacity: 90%;
+		}
+		
+		.editar-lista{
+			padding: 0;
+			border: none;
+			background: none;
+			color: gray;
+			border-radius: 100%;
+			border: 2.5px;
+			border-style: solid;
+			padding: 5px;
+			margin-left: 5px;
+			padding-top: 2px;
+			opacity: 70%;
+		}
+		
+		.editar-lista:hover{
+			background-color: gray;
+			color: white;
+			border-radius: 100%;
+			transition: .5s;
+			opacity: 80%;
+		}
+
+		.botones-edicion-exp-edu{
+			display: block;
+			float: right;
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+
+		.agregar_item{
+			padding: 0;
+			border: none;
+			background: none;
+			color: green;
+			opacity: 80%;
+		}
+
+		.agregar_item:hover{
+			background-color: green;
+			color: white;
+			opacity: 85%;
+			border-radius: 100%;
+			transition: .5s;
+		}
+
+		.boton-agregar{
+			display: block;
+			float: right;
+			padding-top: 20px;
+		}
+
 /*TITULO SECCION*/
 .card-title{
 	font-weight: 600;
 	margin-top: 10px;
 	margin-left: 5px;
+	width: 70%;
+	display: block;
+	float: left;
+	padding-top: 15px;
+	margin-bottom: 40px;
 }
 
 /*CAJA DE TEXTO PARRAFO EXPERIENCIA-FORMACION*/
@@ -289,8 +365,11 @@ div.titulo-trab-educ{
 
 div.divisor-lugar-trab-educ{
 	float: left;
+	display: block;
+	width: 100%;
 	margin: 10px;
 	margin-bottom: 20px;
+
 }
 
 					/*GRAFICOS DE BARRA CIRCULAR*/

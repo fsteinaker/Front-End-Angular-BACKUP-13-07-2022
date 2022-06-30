@@ -1,5 +1,5 @@
-export interface localidad{
-    id?: number;
+export class localidad{
+    id: number;
     ciudad: String;
     provincia: String;
     pais: String;

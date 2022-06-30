@@ -123,8 +123,8 @@ export class PortfolioService {
         return this.http.put<any>(`${this.apiServerUrl}/educacion/editar/${id}`, educacion);
       }
 
-      public updateExplaboral(id:number, experiencia: explaboral):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/explaboral/editar/${id}`, experiencia);
+      public updateExplaboral(id:number, explaboral: explaboral):Observable<any>{
+        return this.http.put<any>(`${this.apiServerUrl}/explaboral/editar/${id}`, explaboral);
       }
       
       public updateLocalidad(id:number, localidad: localidad):Observable<any>{

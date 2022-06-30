@@ -1,5 +1,5 @@
-export interface usuario{
-    id?: number;
+export class usuario{
+    id: number;
     email: String;
     password: String;
 }

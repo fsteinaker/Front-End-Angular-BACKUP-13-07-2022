@@ -1,5 +1,5 @@
-export interface habilidades{
-    id?: number;
+export class habilidades{
+    id: number;
     tipo: String;
     nivel: number;
     detalle: number;

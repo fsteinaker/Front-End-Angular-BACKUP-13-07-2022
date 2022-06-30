@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Componentes
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
@@ -19,9 +20,11 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { ErrorComponent } from './componentes/iniciar-sesion/error/error.component';
 import { RegistroExitosoComponent } from './componentes/iniciar-sesion/registro-exitoso/registro-exitoso.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { NuevaExpComponent } from './componentes/experiencia/nueva-exp/nueva-exp.component';
+import { EditarExpComponent } from './componentes/experiencia/editar-exp/editar-exp.component';
+import { NuevaFormComponent } from './componentes/formacion/nueva-form/nueva-form.component';
 
 // Firebase
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthGuardModule } from '@angular/fire/auth-guard';
@@ -45,7 +48,10 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     RegistrarseComponent,
     ErrorComponent,
     RegistroExitosoComponent,
-    NavbarComponent
+    NavbarComponent,
+    NuevaExpComponent,
+    NuevaFormComponent,
+    EditarExpComponent
   ],
   imports: [
     BrowserModule,
