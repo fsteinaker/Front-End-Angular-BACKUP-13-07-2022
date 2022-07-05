@@ -4,6 +4,8 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 
 import { persona } from '../model/persona.model';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -13,7 +15,7 @@ import { persona } from '../model/persona.model';
 export class PerfilComponent implements OnInit {  
   persona: persona | any;
 
-  constructor(public personaService: PortfolioService) { }
+  constructor(public personaService: PortfolioService, public localidadService: PortfolioService, public router: Router) { }
 
   ngOnInit(): void {
 
@@ -22,4 +24,9 @@ export class PerfilComponent implements OnInit {
             this.persona = data;
           })
         };
+
+        editarPerfil(id:number) {
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/editar-perfil',id]));
+        }
+
 }

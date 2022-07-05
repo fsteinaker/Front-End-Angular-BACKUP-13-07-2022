@@ -16,8 +16,12 @@ userLogged=this.AuthService.getUserLogged();
   ngOnInit(): void {
   }
 
+  home(){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
+  }
+
   logout() {
-    this.router.navigateByUrl('/iniciar-sesion')
+    this.router.navigateByUrl('/iniciar-sesion');    
     this.authService.logout();    
   }
 

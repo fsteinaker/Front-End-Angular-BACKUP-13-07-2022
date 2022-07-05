@@ -32,11 +32,6 @@
         console.log(message + "<br>");
     }
 
-// Ventana donde notifica que no se puede editar contenido //
-    function ventana_notificacion(){
-        alert("Esta sección no está disponible para su edición.");
-    }
-
 /*Funcion precionar enter para terminar edicion*/
     let textarea=document.getElementById("edit-acercade")
     textarea.addEventListener('keyup', (e) => {

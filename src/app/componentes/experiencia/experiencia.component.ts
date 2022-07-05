@@ -49,15 +49,15 @@ explaboralList!: explaboral[];
         if(result.value){
       this.explaboralService.deleteExplaboral(id).subscribe(
         data => {
-          console.log(data);
-        this.getdatosExpLab();       
+          console.log(data);        
+      })
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio'], {fragment: 'experiencia'}));
+      this.getdatosExpLab();       
         swal(
           'Experiencia laboral eliminada',
           'Se ha borrado con exito',
           'success'
         )
-      })
-      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
     }    
   }) 
 }

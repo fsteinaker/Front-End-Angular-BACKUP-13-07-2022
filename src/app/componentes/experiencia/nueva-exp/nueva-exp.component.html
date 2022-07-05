@@ -158,13 +158,11 @@
                     placeholder="INGRESE direccion URL de la imagen (Sitio web donde se encuentra almacenado)"
                     />
                 </div><br>
-                
-                <!-- FUNCION onChange dentro etiqueta <input> en imagen -->
-               <!-- (ngModelChange)="onChange($event, imagen)" -->
 
             <div style="float:right; display: block;">
             <button class="btn btn-success" [disabled]= "!empresaForm.form.valid">Guardar</button>
             <button class="btn btn-danger" (click)="irHome()" style="margin-left: 10px;">Descartar y salir</button>
             </div>
         </form>
-    </div>
+
+</div>

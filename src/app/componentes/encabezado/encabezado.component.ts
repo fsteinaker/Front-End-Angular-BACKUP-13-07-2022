@@ -5,17 +5,7 @@ import { localidad } from '../model/localidad.model';
 
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
-                //import { AuthService } from 'src/app/services/auth.service';
-                //import { PorfolioService } from 'src/app/servicios/porfolio.service';
-                
-                              //miPorfolio:any;
-                              //constructor(private datosPorfolio:PorfolioService) { }
-                
-                              //ngOnInit(): void {
-                              //this.datosPorfolio.ObtenerDatos().subscribe(data =>{
-                                //console.log(data);
-                                //this.miPorfolio=data;
-                              //});
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-encabezado',
@@ -27,9 +17,8 @@ export class EncabezadoComponent implements OnInit {
   persona: persona | any;
   localidad: localidad | any;
   authService: any;
-  router: any;
 
-          constructor(public personaService: PortfolioService, public localidadService: PortfolioService) { }
+          constructor(public personaService: PortfolioService, public localidadService: PortfolioService, public router: Router) { }
 
           ngOnInit(): void {
 
@@ -44,6 +33,10 @@ export class EncabezadoComponent implements OnInit {
                   })
             
           };
+
+          editarEncabezado(id:number) {
+            this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/editar-encabezado',id]));
+          }
 
   logout() {
     this.authService.logout();

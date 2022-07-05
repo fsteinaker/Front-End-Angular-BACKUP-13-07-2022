@@ -1,12 +1,25 @@
-<nav class="navbar navbar-light" style="background-color: #31bbec; margin-bottom: 20px; box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;">
+<nav class="navbar navbar-light"
+      style="position: fixed;
+      top: 0;
+      width:100%;
+      background-color: #31bbec;
+      z-index: 1020;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"
+>
   <div class="container-fluid">
     <a class="navbar-brand" *ngIf="userLogged|async as user">
 
       <img src=".\assets\icon\icono-perfil.svg" style="width: 40px; border-radius: 100%; float: left;" alt=""><h5 style="font-weight: 500; color:white; float: right; margin-left: 10px; padding-top: 5px;">¡Hola {{user.email}}!</h5>
 
-    </a>
+    </a><div id="YoProgramo" title="Mirá las novedades en Twitter"><p id="numeral-YoProgramo">#</p><a href="https://twitter.com/hashtag/yoprogramo" target="_blank"><p id="YoProgramo-texto">YoProgramo</p></a></div>
+
     <div id="navbar-cerrar-sesion">
-      <button class="btn btn-outline-light" (click)="logout()"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+      <button class="btn btn-outline-light" (click)="home()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+      </svg> Inicio</button>
+
+      <button class="btn btn-outline-light" (click)="logout()" style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
           height="24" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
           <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
           <path

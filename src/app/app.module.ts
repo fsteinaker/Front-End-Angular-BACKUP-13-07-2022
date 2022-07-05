@@ -8,7 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Componentes
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
+import { EditarEncabezadoComponent } from './componentes/encabezado/editar-encabezado/editar-encabezado.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { EditarPerfilComponent } from './componentes/perfil/editar-perfil/editar-perfil.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { FormacionComponent } from './componentes/formacion/formacion.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
@@ -32,7 +34,6 @@ import { AuthGuardModule } from '@angular/fire/auth-guard';
 // Import ng-circle-progress
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     NavbarComponent,
     NuevaExpComponent,
     NuevaFormComponent,
-    EditarExpComponent
+    EditarExpComponent,
+    EditarEncabezadoComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,

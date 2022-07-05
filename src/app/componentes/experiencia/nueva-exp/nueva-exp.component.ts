@@ -21,12 +21,12 @@ export class NuevaExpComponent implements OnInit {
     this.explaboralService.postNewExperiencia(this.explaboral).subscribe(dato => {
       console.log(dato);
     });
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio'], {fragment: 'experiencia'}));
     swal('Experiencia laboral añadida',`Su trabajo en ${this.explaboral.empresa} ha sido registrado`,`success`);
   }
 
   irHome(){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
+    this.router.navigate(['/portfolio'], {fragment: 'experiencia'});
   }
-
+  
 }

@@ -30,11 +30,11 @@ export class EditarExpComponent implements OnInit {
       dato => {
       this.irHome();
     });
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio'], {fragment: 'experiencia'}));
     swal('Su experiencia laboral ha sido actualizada',`Su trabajo en ${this.explaboral.empresa} se ha modificado`,`success`);
   }
 
   irHome(){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
+    this.router.navigate(['/portfolio'], {fragment: 'experiencia'});
   }
 }
