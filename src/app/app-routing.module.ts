@@ -10,12 +10,17 @@ import { NuevaFormComponent } from './componentes/formacion/nueva-form/nueva-for
 import { EditarExpComponent } from './componentes/experiencia/editar-exp/editar-exp.component';
 import { EditarEncabezadoComponent } from './componentes/encabezado/editar-encabezado/editar-encabezado.component';
 import { EditarPerfilComponent } from './componentes/perfil/editar-perfil/editar-perfil.component';
+import { EditarFormComponent } from './componentes/formacion/editar-form/editar-form.component';
+import { NuevaHabComponent } from './componentes/habilidades/nueva-hab/nueva-hab.component';
+import { EditarHabComponent } from './componentes/habilidades/editar-hab/editar-hab.component';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto/nuevo-proyecto.component';
+import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto/editar-proyecto.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'iniciar-sesion',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   { path: 'iniciar-sesion', component: IniciarSesionComponent },
   { path: 'registrarse', component: RegistrarseComponent },
@@ -23,19 +28,24 @@ const routes: Routes = [
   { path: 'registro-exitoso', component: RegistroExitosoComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'nueva-exp', component: NuevaExpComponent },
+  { path: 'nueva-form', component: NuevaFormComponent },
   { path: 'editar-exp/:id', component: EditarExpComponent },
   { path: 'editar-encabezado/:id', component: EditarEncabezadoComponent },
   { path: 'editar-perfil/:id', component: EditarPerfilComponent },
-  { path: 'nueva-form', component: NuevaFormComponent }
+  { path: 'editar-form/:id', component: EditarFormComponent },
+  { path: 'nueva-hab', component: NuevaHabComponent },
+  { path: 'editar-hab/:id', component: EditarHabComponent },
+  { path: 'nueva-proyecto', component: NuevoProyectoComponent },
+  { path: 'editar-proyecto/:id', component: EditarProyectoComponent },
 ];
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
-}
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routerOptions)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

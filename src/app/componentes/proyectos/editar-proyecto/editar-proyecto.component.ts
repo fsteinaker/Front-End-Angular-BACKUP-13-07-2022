@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-import { persona } from '../../model/persona.model';
+import { proyectos } from '../../model/proyectos.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-editar-perfil',
-  templateUrl: './editar-perfil.component.html',
-  styleUrls: ['./editar-perfil.component.css'],
+  selector: 'app-editar-proyecto',
+  templateUrl: './editar-proyecto.component.html',
+  styleUrls: ['./editar-proyecto.component.css']
 })
-export class EditarPerfilComponent implements OnInit {
+export class EditarProyectoComponent implements OnInit {
   id: number;
-  persona: persona | any;
+  proyecto: proyectos;
 
   constructor(
-    public personaService: PortfolioService,
+    public proyectoService: PortfolioService,
     public router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.personaService.detallePersona(this.id).subscribe((dato: persona) => {
-      this.persona = dato;
+    this.proyectoService.detalleProyecto(this.id).subscribe((dato: proyectos) => {
+      this.proyecto = dato;
     });
   }
 
   onSubmit() {
-    this.personaService.updatePersona(this.id, this.persona).subscribe();
+    this.proyectoService.updateProyectos(this.id, this.proyecto).subscribe();
     this.router
       .navigateByUrl('/', { skipLocationChange: true })
       .then(() => this.router.navigate(['/portfolio']));
     swal(
       'Información actualizada',
-      `Sus datos personales han sido modificados`,
+      `El proyecto ha sido modificado`,
       `success`
     );
   }

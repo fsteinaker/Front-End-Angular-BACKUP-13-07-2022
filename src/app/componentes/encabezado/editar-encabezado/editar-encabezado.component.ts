@@ -7,32 +7,38 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-editar-encabezado',
   templateUrl: './editar-encabezado.component.html',
-  styleUrls: ['./editar-encabezado.component.css']
+  styleUrls: ['./editar-encabezado.component.css'],
 })
 export class EditarEncabezadoComponent implements OnInit {
+  id: number;
+  persona: persona = new persona();
 
-  id : number;
-  persona : persona = new persona();
-
-  constructor(private personaService: PortfolioService, private router: Router, private route:ActivatedRoute) { }
+  constructor(
+    private personaService: PortfolioService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-
     this.id = this.route.snapshot.params['id'];
-    this.personaService.detallePersona(this.id).subscribe(
-      (dato: persona) => {
+    this.personaService.detallePersona(this.id).subscribe((dato: persona) => {
       this.persona = dato;
-    }
-  );
-}
-
-  onSubmit(){
-    this.personaService.updatePersona(this.id,this.persona).subscribe();
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
-    swal('Información actualizada',`Sus datos personales han sido modificados`,`success`);
+    });
   }
 
-  irHome(){
+  onSubmit() {
+    this.personaService.updatePersona(this.id, this.persona).subscribe();
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() => this.router.navigate(['/portfolio']));
+    swal(
+      'Información actualizada',
+      `Sus datos personales han sido modificados`,
+      `success`
+    );
+  }
+
+  irHome() {
     this.router.navigate(['/portfolio']);
   }
 }

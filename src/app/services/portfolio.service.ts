@@ -12,161 +12,199 @@ import { proyectos } from '../componentes/model/proyectos.model';
 import { usuario } from '../componentes/model/usuario.model';
 
 @Injectable({ providedIn: 'root' })
-
 export class PortfolioService {
-    
-    private apiServerUrl = environment.apiBaseUrl;
-        
-    constructor(private http: HttpClient) { }
+  private apiServerUrl = environment.apiBaseUrl;
 
-      // COMIENZO SERVICIO PARA VER COMPONENTES
+  constructor(private http: HttpClient) {}
 
-      public getProyectos(): Observable<proyectos[]>{
-        return this.http.get<proyectos[]>(`${this.apiServerUrl}/proyectos`);
-        }
+  // COMIENZO SERVICIO PARA VER COMPONENTES
 
-      public getHabilidades(): Observable<habilidades[]>{
-        return this.http.get<habilidades[]>(`${this.apiServerUrl}/habilidad`);
-        }
+  public getProyectos(): Observable<proyectos[]> {
+    return this.http.get<proyectos[]>(`${this.apiServerUrl}/proyectos`);
+  }
 
-      public getEducacion(): Observable<educacion[]>{
-        return this.http.get<educacion[]>(`${this.apiServerUrl}/educacion`);
-        }
+  public getHabilidades(): Observable<habilidades[]> {
+    return this.http.get<habilidades[]>(`${this.apiServerUrl}/habilidad`);
+  }
 
-      public getExplaboral(): Observable<explaboral[]>{
-        return this.http.get<explaboral[]>(`${this.apiServerUrl}/explaboral`);
-        }
+  public getEducacion(): Observable<educacion[]> {
+    return this.http.get<educacion[]>(`${this.apiServerUrl}/educacion`);
+  }
 
-        public getLocalidad(): Observable<localidad>{
-            return this.http.get<localidad>(`${this.apiServerUrl}/localidad`);
-        }
-      
-        public getPersona(): Observable<persona>{
-            return this.http.get<persona>(`${this.apiServerUrl}/persona`);
-        }
+  public getExplaboral(): Observable<explaboral[]> {
+    return this.http.get<explaboral[]>(`${this.apiServerUrl}/explaboral`);
+  }
 
-        public getUsuario(): Observable<usuario[]>{
-          return this.http.get<usuario[]>(`${this.apiServerUrl}/usuario`);
-      }
+  public getLocalidad(): Observable<localidad> {
+    return this.http.get<localidad>(`${this.apiServerUrl}/localidad`);
+  }
 
-        //servicio para CREAR nuevos datos (POST)
-        
-        public postNewProyectos(proyectos:proyectos):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/proyectos/crear`, proyectos);
-        }
+  public getPersona(): Observable<persona> {
+    return this.http.get<persona>(`${this.apiServerUrl}/persona`);
+  }
 
-        public postNewHabilidades(habilidades:habilidades):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/habilidad/crear`, habilidades);
-        }
+  public getUsuario(): Observable<usuario[]> {
+    return this.http.get<usuario[]>(`${this.apiServerUrl}/usuario`);
+  }
 
-        public postNewEducacion(educacion:educacion):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/educacion/crear`, educacion);
-        }
+  //servicio para CREAR nuevos datos (POST)
 
-        public postNewExperiencia(explaboral:explaboral):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/explaboral/crear`, explaboral);
-        }
+  public postNewProyectos(proyectos: proyectos): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiServerUrl}/proyectos/crear`,
+      proyectos
+    );
+  }
 
-        public postNewLocalidad(localidad:localidad):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/localidad/crear`, localidad);
-        }
+  public postNewHabilidades(habilidades: habilidades): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiServerUrl}/habilidad/crear`,
+      habilidades
+    );
+  }
 
-        public postNewPersona(persona:persona):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/persona/crear`, persona);
-        }
+  public postNewEducacion(educacion: educacion): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiServerUrl}/educacion/crear`,
+      educacion
+    );
+  }
 
-        public postNewUsuario(usuario:usuario):Observable<any>{
-          return this.http.post<any>(`${this.apiServerUrl}/usuario/crear`, usuario);
-        }
-      
-        // servicio para TRAER los datos del porfolio
+  public postNewExperiencia(explaboral: explaboral): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiServerUrl}/explaboral/crear`,
+      explaboral
+    );
+  }
 
-        public detalleProyecto(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/proyectos/detalle/${id}`);
-        }
-        
-        public detalleHabilidad(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/habilidad/detalle/${id}`);
-        }
+  public postNewLocalidad(localidad: localidad): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiServerUrl}/localidad/crear`,
+      localidad
+    );
+  }
 
-        public detalleExplaboral(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/explaboral/detalle/${id}`);
-        }
-        
-        public detalleEducacion(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/educacion/detalle/${id}`);
-        }
+  public postNewPersona(persona: persona): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/persona/crear`, persona);
+  }
 
-        public detalleLocalidad(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/localidad/detalle/${id}`);
-        }
+  public postNewUsuario(usuario: usuario): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/usuario/crear`, usuario);
+  }
 
-        public detallePersona(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/persona/detalle/${id}`);
-        }
+  // servicio para TRAER los datos del porfolio
 
-        public detalleUsuario(id: number): Observable<any>{
-          return this.http.get<any>(`${this.apiServerUrl}/usuario/detalle/${id}`);
-        }
+  public detalleProyecto(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/proyectos/detalle/${id}`);
+  }
 
-      //servicio para ACTUALIZAR los datos del porfolio (PUT)
+  public detalleHabilidad(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/habilidad/detalle/${id}`);
+  }
 
-      public updateProyectos(id:number, proyectos: proyectos):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/proyectos/editar/${id}`, proyectos);
-      }
+  public detalleExplaboral(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/explaboral/detalle/${id}`);
+  }
 
-      public updateHabilidades(id:number, skillshabilidades:habilidades):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/habilidad/editar/${id}`, skillshabilidades);
-      }
+  public detalleEducacion(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/educacion/detalle/${id}`);
+  }
 
-      public updateEducacion(id:number, educacion: educacion):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/educacion/editar/${id}`, educacion);
-      }
+  public detalleLocalidad(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/localidad/detalle/${id}`);
+  }
 
-      public updateExplaboral(id:number, explaboral: explaboral):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/explaboral/editar/${id}`, explaboral);
-      }
-      
-      public updateLocalidad(id:number, localidad: localidad):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/localidad/editar/${id}`, localidad);
-      }
+  public detallePersona(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/persona/detalle/${id}`);
+  }
 
-      public updatePersona(id:number, persona: persona):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/persona/editar/${id}`, persona);
-      }
+  public detalleUsuario(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/usuario/detalle/${id}`);
+  }
 
-      public updateUsuario(id:number, usuario: usuario):Observable<any>{
-        return this.http.put<any>(`${this.apiServerUrl}/usuario/editar/${id}`, usuario);
-      }
+  //servicio para ACTUALIZAR los datos del porfolio (PUT)
 
-      //servicio para BORRAR los datos del porfolio (DELETE)
+  public updateProyectos(id: number, proyectos: proyectos): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/proyectos/editar/${id}`,
+      proyectos
+    );
+  }
 
-      public deleteProyectos(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/proyectos/borrar/${id}`);
-      }
+  public updateHabilidades(
+    id: number,
+    skillshabilidades: habilidades
+  ): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/habilidad/editar/${id}`,
+      skillshabilidades
+    );
+  }
 
-      public deleteHabilidades(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/habilidad/borrar/${id}`);
-      }
+  public updateEducacion(id: number, educacion: educacion): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/educacion/editar/${id}`,
+      educacion
+    );
+  }
 
-      public deleteExplaboral(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/explaboral/borrar/${id}`);
-      }
+  public updateExplaboral(id: number, explaboral: explaboral): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/explaboral/editar/${id}`,
+      explaboral
+    );
+  }
 
-      public deleteEducacion(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/educacion/borrar/${id}`);
-      }
+  public updateLocalidad(id: number, localidad: localidad): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/localidad/editar/${id}`,
+      localidad
+    );
+  }
 
-      public deleteLocalidad(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/localidad/borrar/${id}`);
-      }
+  public updatePersona(id: number, persona: persona): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/persona/editar/${id}`,
+      persona
+    );
+  }
 
-      public deletePersona(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/persona/borrar/${id}`);
-      }
+  public updateUsuario(id: number, usuario: usuario): Observable<any> {
+    return this.http.put<any>(
+      `${this.apiServerUrl}/usuario/editar/${id}`,
+      usuario
+    );
+  }
 
-      public deleteUsuario(id:number):Observable<any>{
-        return this.http.delete<any>(`${this.apiServerUrl}/usuario/borrar/${id}`);
-      }
+  //servicio para BORRAR los datos del porfolio (DELETE)
 
+  public deleteProyectos(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiServerUrl}/proyectos/borrar/${id}`);
+  }
+
+  public deleteHabilidades(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiServerUrl}/habilidad/borrar/${id}`);
+  }
+
+  public deleteExplaboral(id: number): Observable<any> {
+    return this.http.delete<any>(
+      `${this.apiServerUrl}/explaboral/borrar/${id}`
+    );
+  }
+
+  public deleteEducacion(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiServerUrl}/educacion/borrar/${id}`);
+  }
+
+  public deleteLocalidad(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiServerUrl}/localidad/borrar/${id}`);
+  }
+
+  public deletePersona(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiServerUrl}/persona/borrar/${id}`);
+  }
+
+  public deleteUsuario(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiServerUrl}/usuario/borrar/${id}`);
+  }
 }

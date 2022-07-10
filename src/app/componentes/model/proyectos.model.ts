@@ -3,5 +3,6 @@ export class proyectos{
     proyectos: String;
     detalle: number;
     tecnologia: String;
+    linkProyecto: String;
     imagen: String;
 }

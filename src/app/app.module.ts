@@ -12,9 +12,15 @@ import { EditarEncabezadoComponent } from './componentes/encabezado/editar-encab
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { EditarPerfilComponent } from './componentes/perfil/editar-perfil/editar-perfil.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
+import { EditarExpComponent } from './componentes/experiencia/editar-exp/editar-exp.component';
 import { FormacionComponent } from './componentes/formacion/formacion.component';
+import { EditarFormComponent } from './componentes/formacion/editar-form/editar-form.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { NuevaHabComponent } from './componentes/habilidades/nueva-hab/nueva-hab.component';
+import { EditarHabComponent } from './componentes/habilidades/editar-hab/editar-hab.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto/nuevo-proyecto.component';
+import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto/editar-proyecto.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
@@ -23,7 +29,6 @@ import { ErrorComponent } from './componentes/iniciar-sesion/error/error.compone
 import { RegistroExitosoComponent } from './componentes/iniciar-sesion/registro-exitoso/registro-exitoso.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { NuevaExpComponent } from './componentes/experiencia/nueva-exp/nueva-exp.component';
-import { EditarExpComponent } from './componentes/experiencia/editar-exp/editar-exp.component';
 import { NuevaFormComponent } from './componentes/formacion/nueva-form/nueva-form.component';
 
 // Firebase
@@ -55,6 +60,11 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     EditarExpComponent,
     EditarEncabezadoComponent,
     EditarPerfilComponent,
+    EditarFormComponent,
+    NuevaHabComponent,
+    EditarHabComponent,
+    NuevoProyectoComponent,
+    EditarProyectoComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,13 +81,12 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       radius: 100,
       outerStrokeWidth: 16,
       innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
       animationDuration: 800,
-    })
- 
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

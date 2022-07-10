@@ -7,26 +7,37 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-nueva-exp',
   templateUrl: './nueva-exp.component.html',
-  styleUrls: ['./nueva-exp.component.css']
+  styleUrls: ['./nueva-exp.component.css'],
 })
 export class NuevaExpComponent implements OnInit {
-  explaboral:explaboral = new explaboral();
+  explaboral: explaboral = new explaboral();
 
-  constructor(private explaboralService: PortfolioService, private router: Router) { }
-  
-  ngOnInit(): void {
+  constructor(
+    private explaboralService: PortfolioService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {}
+
+  onSubmit() {
+    this.explaboralService
+      .postNewExperiencia(this.explaboral)
+      .subscribe((dato) => {
+        console.log(dato);
+      });
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() =>
+        this.router.navigate(['/portfolio'], { fragment: 'experiencia' })
+      );
+    swal(
+      'Experiencia laboral añadida',
+      `Su trabajo en ${this.explaboral.empresa} ha sido registrado`,
+      `success`
+    );
   }
 
-  onSubmit(){
-    this.explaboralService.postNewExperiencia(this.explaboral).subscribe(dato => {
-      console.log(dato);
-    });
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio'], {fragment: 'experiencia'}));
-    swal('Experiencia laboral añadida',`Su trabajo en ${this.explaboral.empresa} ha sido registrado`,`success`);
+  irHome() {
+    this.router.navigate(['/portfolio'], { fragment: 'experiencia' });
   }
-
-  irHome(){
-    this.router.navigate(['/portfolio'], {fragment: 'experiencia'});
-  }
-  
 }

@@ -5,24 +5,24 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-userLogged=this.AuthService.getUserLogged();
+  userLogged = this.AuthService.getUserLogged();
 
-  constructor(private AuthService: AuthService, public router: Router) { }
+  constructor(private AuthService: AuthService, public router: Router) {}
   authService: any;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  home(){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/portfolio']));
+  home() {
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() => this.router.navigate(['/portfolio']));
   }
 
   logout() {
-    this.router.navigateByUrl('/iniciar-sesion');    
-    this.authService.logout();    
+    this.router.navigateByUrl('/iniciar-sesion');
+    this.authService.logout();
   }
-
 }
